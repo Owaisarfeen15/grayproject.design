@@ -1,8 +1,8 @@
 <?php
-include 'config.php';
+include 'config.html';
 session_start();
 if ($_SESSION['user'] == "") {
-    header('location: index.php');
+    header('location: index.html');
 }
 $off = $_GET['account'];
 if (isset($off)) {
@@ -10,7 +10,7 @@ if (isset($off)) {
         session_destroy();
         unset($_SESSION['user']);
         session_unset();
-        header('location: index.php');
+        header('location: index.html');
     } else {
         echo '';
     }
